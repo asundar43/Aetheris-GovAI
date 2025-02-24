@@ -23,6 +23,11 @@ app.post('/event', (req, res) => {
   res.send({ message: 'Event received' });
 });
 
+// Example API endpoint for testing
+app.get('/api/test', (req, res) => {
+  res.json({ message: 'Hello from Node backend!' });
+});
+
 // Start server
 app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
