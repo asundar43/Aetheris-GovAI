@@ -14,6 +14,7 @@ contract AVSAuthentication {
 
     event UserAuthenticated(address indexed user);
     event OperationLogged(address indexed user, string operation, uint256 timestamp);
+    event UserRevoked(address indexed user);
 
     constructor() {
         owner = msg.sender;
@@ -35,5 +36,12 @@ contract AVSAuthentication {
     // Simulated operation: log a liquidity operation
     function logOperation(string calldata operation) external onlyAuthenticated {
         emit OperationLogged(msg.sender, operation, block.timestamp);
+    }
+
+    // Owner can remove authenticated users
+    function removeAuthenticatedUser(address _user) external {
+        require(msg.sender == owner, "Only owner can remove users");
+        authenticatedUsers[_user] = false;
+        emit UserRevoked(_user);
     }
 }
