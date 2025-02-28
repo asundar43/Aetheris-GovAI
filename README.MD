@@ -1,10 +1,10 @@
-# Transparent DAO Decision-Making Platform
+# Aetheris - Transparent DAO Decision-Making Platform
 
 ![Diagram](Diagram.jpg)
 
 ## Overview
 
-The Transparent DAO Decision-Making Platform revolutionizes decentralized governance by combining advanced AI insights with cutting-edge cryptographic verification. Designed for DAOs that demand transparency, security, and informed decision-making, this platform empowers community members to evaluate proposals efficiently and confidently. Our solution not only streamlines governance processes but also lays the groundwork for a new era of decentralized, trust-enhanced decision-making.
+Aetheris revolutionizes decentralized governance by combining advanced AI insights with cutting-edge cryptographic verification. Designed for DAOs that demand transparency, security, and informed decision-making, this platform empowers community members to evaluate proposals efficiently and confidently. Our solution not only streamlines governance processes but also lays the groundwork for a new era of decentralized, trust-enhanced decision-making.
 
 ## Key Features
 
@@ -21,7 +21,7 @@ The Transparent DAO Decision-Making Platform revolutionizes decentralized govern
   Decisions are locked in through zk-proof verification via Boundless by RISC Zero, ensuring that once a decision is made, it remains unalterable.
 
 - **Robust Task Authentication:**  
-  Verification tasks are confirmed via the Othentic Stack’s Proof of Task, further cementing the integrity and transparency of every step in the decision-making process.
+  Verification tasks are confirmed via the Othentic Stack’s Proof of Task on Eigenlayer AVS, further cementing the integrity and transparency of every step in the decision-making process.
 
 ## How It Works
 
@@ -38,7 +38,7 @@ The Transparent DAO Decision-Making Platform revolutionizes decentralized govern
    - The AI-generated decision is sent for immutable verification via zk-proofs using Boundless by RISC Zero. The user's wallet funds the verification task, ensuring a secure and decentralized process.
 
 5. **Proof of Task Verification:**  
-   - Once a Prover on Boundless completes the verification, the task is forwarded to the Othentic Stack for final authentication via Proof of Task, ensuring that every aspect of the process is both secure and transparent.
+   - Once a Prover on Boundless completes the verification, the task is forwarded to Othentic AVS on Eigenlayer for final authentication via Proof of Task, ensuring that every aspect of the process is both secure and transparent.
 
 ## Technology Stack
 
