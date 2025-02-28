@@ -6,6 +6,9 @@ const AnalyzeProposal = () => {
   const [forumTopicId, setForumTopicId] = useState("");
   const [decision, setDecision] = useState<string | null>(null);
   const [logicParagraph, setLogicParagraph] = useState<string | null>(null);
+  const [proofVerificationAddress, setProofVerificationAddress] = useState<string | null>(null);
+  const [verifiedByOthentic, setVerifiedByOthentic] = useState<string | null>(null);
+  const [verificationAddress, setVerificationAddress] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
 
   const handleAnalyze = async () => {
@@ -23,6 +26,9 @@ const AnalyzeProposal = () => {
       const result = await response.json();
       setDecision(result.decision);
       setLogicParagraph(result.logicParagraph);
+      setProofVerificationAddress(result.proofVerificationAddress);
+      setVerifiedByOthentic(result.verifiedByOthentic);
+      setVerificationAddress(result.verificationAddress);
     } catch (error) {
       console.error("Error analyzing proposal:", error);
     } finally {
@@ -65,6 +71,12 @@ const AnalyzeProposal = () => {
           <p className="text-lg font-mono mb-4">{decision}</p>
           <h2 className="text-lg font-semibold mb-2">Explanation:</h2>
           <p className="text-lg font-mono mb-4">{logicParagraph}</p>
+          <h2 className="text-lg font-semibold mb-2">Proof Verification Address:</h2>
+          <p className="text-lg font-mono mb-4">{proofVerificationAddress}</p>
+          <h2 className="text-lg font-semibold mb-2">Verification Status:</h2>
+          <p className="text-lg font-mono mb-4">{verifiedByOthentic}</p>
+          <h2 className="text-lg font-semibold mb-2">Verification Address:</h2>
+          <p className="text-lg font-mono mb-4">{verificationAddress}</p>
         </div>
       )}
       <style jsx>{`

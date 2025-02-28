@@ -39,8 +39,16 @@ Body: ${body}` }
       // Determine a simple 'yes' or 'no' based on the decision text
       const decision = decisionText.toLowerCase().includes('yes') ? 'yes' : 'no';
 
-      // Send the decision back to the client
-      res.status(200).json({ decisionText, logicParagraph, decision });
+      // Convert decision to string format for zk proof
+      const decisionString = decision === 'yes' ? 'yes' : 'no';
+
+      // Execute task with Othentic
+      const othenticResponse = await axios.post('http://localhost:4003/task/execute');
+      const verifiedByOthentic = othenticResponse.status === 200 ? 'Verified by Othentic' : 'Verification failed';
+      const verificationAddress = othenticResponse.data.verificationAddress || 'No address available';
+
+      // Send the decision, verification status, and verification address back to the client
+      res.status(200).json({ decisionText, logicParagraph, decision, verifiedByOthentic, verificationAddress });
     } catch (error) {
       console.error('Error analyzing proposal:', error);
       res.status(500).json({ error: 'Failed to analyze proposal' });
